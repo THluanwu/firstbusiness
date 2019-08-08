@@ -17,7 +17,7 @@
       <thead>
       <th>商品ID</th>
       <th>商品名称</th>
-      <th>产品子图</th>
+      <th>产品图</th>
       <th>类别</th>
       <th>商品价格</th>
       <th>库存数量</th>
@@ -33,7 +33,7 @@
               <th>${product.id}</th>
               <th>${product.name}</th>
               <%--<th>${product.subImages}</th>--%>
-              <th><input type="image" src="/upload/${product.subImages}" alt=""></th>
+              <th><input type="image" src="/upload/${product.mainImage}" alt=""></th>
               <th>${product.categoryId}</th>
               <th>${product.price}</th>
               <th>${product.stock}</th>

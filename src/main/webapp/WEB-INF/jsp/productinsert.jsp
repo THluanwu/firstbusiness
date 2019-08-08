@@ -27,7 +27,7 @@
         <option value="${category.id}">${category.name}</option>
     </c:forEach>
           </select><br/>
-    子图<input type="file" name="subimages"><br/>
+    子图<input type="file" name="subimages" multiple="multiple"><br/>
     价格:<input type="text" name="price" ><br/>
     库存:<input type="text" name="stock" ><br/>
     状态:<input type="text" name="status"><br/>
