@@ -14,9 +14,9 @@
 <body>
 
 <h1>欢迎,${user.username}登录</h1>
-
-
-
+<a href="/user/find/">管理用户</a>
+<a href="/user/product/find/">商品列表</a>
+<a href="/user/category/find/">类别</a>
 
 </body>
 </html>

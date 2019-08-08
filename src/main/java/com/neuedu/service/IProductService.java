@@ -1,12 +1,13 @@
 package com.neuedu.service;
 
 import com.neuedu.exception.MyException;
+import com.neuedu.pojo.Category;
 import com.neuedu.pojo.Product;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
+
 public interface IProductService {
     /**
      * 增加商品
@@ -25,4 +26,7 @@ public interface IProductService {
      * 查询商品
      * */
     public List<Product> findall()throws MyException;
+
+    public Product findProductById(int productId);
+    public List<Category> findId()throws MyException;
 }

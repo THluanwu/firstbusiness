@@ -25,6 +25,7 @@ public interface ICategoryService {
      * */
     public List<Category> findAll() throws MyException;
 
+    public List<Integer> findParentId()throws MyException;
 
     /**
      * 根据类别id查询类别信息

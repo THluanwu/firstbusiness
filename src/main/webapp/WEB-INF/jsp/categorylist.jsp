@@ -21,9 +21,9 @@
            <th>创建时间</th>
            <th>修改时间</th>
            <th>操作</th>
-           <th><a href="insert/">增加</a></th>
+           <th><a href="/user/category/insert/">增加</a></th>
        </thead>
-
+        <a href="/user/home/">返回</a>
         <c:forEach items="${categorylist}" var="category">
 
          <tr>
@@ -34,8 +34,8 @@
              <th>${category.createTime}</th>
              <th>${category.updateTime}</th>
              <th>
-                 <a href="update/${category.id}" >修改</a>
-                 <a href="delete/${category.id}" >删除</a>
+                 <a href="/user/category/update/${category.id}" >修改</a>
+                 <a href="/user/category/delete/${category.id}" >删除</a>
 
              </th>
          </tr>

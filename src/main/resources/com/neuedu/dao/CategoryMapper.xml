@@ -73,4 +73,8 @@
     select id, parent_id, name, status, sort_order, create_time, update_time
     from neuedu_category
   </select>
+  <select id="selectParentId" resultMap="BaseResultMap">
+    select DISTINCT parent_id
+    from neuedu_category
+  </select>
 </mapper>

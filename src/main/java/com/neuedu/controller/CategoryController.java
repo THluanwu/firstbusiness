@@ -17,10 +17,12 @@ import java.util.List;
 public class CategoryController {
     @Autowired
     ICategoryService categoryService;
-    @RequestMapping("find")
+    @RequestMapping(value = "find")
     public  String  findAll(HttpSession session){
         List<Category> categoryList=categoryService.findAll();
+        List<Integer> integerList=categoryService.findParentId();
         session.setAttribute("categorylist",categoryList);
+        session.setAttribute("integerList",integerList);
         return "categorylist";
     }
     @RequestMapping(value = "update/{id}",method = RequestMethod.GET)
@@ -44,19 +46,18 @@ public class CategoryController {
     }
 
     @RequestMapping(value = "delete/{id}",method = RequestMethod.GET)
-    public  String  delete(@PathVariable("id") Integer categoryId, HttpServletRequest request){
+    public  String  delete(@PathVariable("id") Integer categoryId){
        int count=categoryService.deleteCategory(categoryId);
        return "redirect:/user/category/find";
 
     }
 
-    @RequestMapping(value = "insert/",method = RequestMethod.GET)
+    @RequestMapping(value = "insert",method = RequestMethod.GET)
     public String insert(){
-
         return "categoryinsert";
     }
 
-    @RequestMapping(value = "insert/",method = RequestMethod.POST)
+    @RequestMapping(value = "insert",method = RequestMethod.POST)
     public String insert(Category category, HttpServletRequest request, HttpServletResponse response) throws UnsupportedEncodingException{
         request.setCharacterEncoding("UTF-8");
         response.setContentType("text/html;charset=UTF-8");

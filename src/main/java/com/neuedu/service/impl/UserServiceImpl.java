@@ -9,13 +9,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PathVariable;
 
+import java.util.List;
+
 @Service
 public class UserServiceImpl implements IUserService{
 
     @Autowired
     UserInfoMapper userInfoMapper;
-
-
 
     @Override
     public UserInfo login(UserInfo userInfo) throws MyException {
@@ -54,6 +54,31 @@ public class UserServiceImpl implements IUserService{
     public UserInfo login(String username, String password) throws MyException {
         UserInfo userInfo=userInfoMapper.findUser(username,password);
         return userInfo;
+    }
+
+    @Override
+    public List<UserInfo> findAll() throws MyException {
+        return userInfoMapper.selectAll();
+    }
+
+    @Override
+    public int deleteUser(int userId) throws MyException {
+        return userInfoMapper.deleteByPrimaryKey(userId);
+    }
+
+    @Override
+    public int addUser(UserInfo userInfo) throws MyException {
+        return userInfoMapper.insert(userInfo);
+    }
+
+    @Override
+    public int updateUser(UserInfo userInfo) throws MyException {
+        return userInfoMapper.updateByPrimaryKey(userInfo);
+    }
+
+    @Override
+    public UserInfo findUserById(int userid) {
+        return userInfoMapper.selectByPrimaryKey(userid);
     }
 
 }

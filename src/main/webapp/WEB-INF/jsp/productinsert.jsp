@@ -9,25 +9,28 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
-    <title>增加类别</title>
+    <title>增加商品</title>
 </head>
 <body>
-<h1>增加类别</h1>
+<h1>增加商品</h1>
 
 
 
-<form action="" method="post">
+<form action="" method="post" enctype="multipart/form-data">
 
     <input type="hidden" name="id" value=""><br/>
     名称<input type="text" name="name" value=""><br/>
-    <%--父类id<input type="text" name="parentId" value=""><br/>--%>
-    父类id:<select name="parentId">
+    <%--类别ID<input type="text" name="categoryId" value=""><br/>--%>
+    类别ID:<select name="categoryId">
     <option></option>
-    <c:forEach items="${categorylist}" var="category">
+    <c:forEach items="${categoryList}" var="category">
         <option value="${category.id}">${category.id}</option>
     </c:forEach>
 </select>
-    类别状态:<input type="text" name="status" value=""><br/>
+    子图<input type="file" name="subImages"><br/>
+    价格:<input type="text" name="price" value=""><br/>
+    库存:<input type="text" name="stock" value=""><br/>
+    状态:<input type="text" name="status" value=""><br/>
     <input type="submit"  value="增加"><br/>
 
 </form>

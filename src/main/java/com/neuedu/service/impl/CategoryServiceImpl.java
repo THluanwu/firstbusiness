@@ -39,6 +39,11 @@ public class CategoryServiceImpl implements ICategoryService {
     }
 
     @Override
+    public List<Integer> findParentId() throws MyException {
+        return categoryMapper.selectParentId();
+    }
+
+    @Override
     public Category findCategoryById(int categoryId) {
 
        return  categoryMapper.selectByPrimaryKey(categoryId);
