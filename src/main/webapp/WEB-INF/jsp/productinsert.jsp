@@ -24,7 +24,7 @@
     类别:<select name="categoryId">
     <option></option>
     <c:forEach items="${categoryList}" var="category">
-        <option >${category.name}</option>
+        <option value="${category.id}">${category.name}</option>
     </c:forEach>
           </select><br/>
     子图<input type="file" name="subimages"><br/>

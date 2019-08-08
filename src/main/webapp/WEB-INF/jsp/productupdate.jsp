@@ -17,16 +17,17 @@
 
 
 
-<form action="" method="post">
+<form action="" method="post" enctype="multipart/form-data">
 
     <input type="hidden" name="id" value="${product.id}"><br/>
     名称<input type="text" name="name" value="${product.name}"><br/>
     价格<input type="text" name="price" value="${product.price}"><br/>
     库存:<input type="text" name="stock" value="${product.stock}"><br/>
+    子图<input type="file" name="subimages" value="${product.subImages}"><br/>
     类别ID:<select name="categoryId">
                           <option></option>
                       <c:forEach items="${categoryList}" var="category">
-                          <option value="${category.id}">${category.id}</option>
+                          <option value="${category.id}">${category.name}</option>
                       </c:forEach>
                 </select>
     <input type="submit"  value="修改"><br/>

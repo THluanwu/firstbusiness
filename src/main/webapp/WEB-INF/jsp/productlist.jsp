@@ -32,7 +32,8 @@
           <tr>
               <th>${product.id}</th>
               <th>${product.name}</th>
-              <th>${product.subImages}</th>
+              <%--<th>${product.subImages}</th>--%>
+              <th><input type="image" src="/upload/${product.subImages}" alt=""></th>
               <th>${product.categoryId}</th>
               <th>${product.price}</th>
               <th>${product.stock}</th>
