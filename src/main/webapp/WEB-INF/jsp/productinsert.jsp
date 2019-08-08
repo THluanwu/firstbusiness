@@ -18,19 +18,19 @@
 
 <form action="" method="post" enctype="multipart/form-data">
 
-    <input type="hidden" name="id" value=""><br/>
-    名称<input type="text" name="name" value=""><br/>
+    <input type="hidden" name="id" ><br/>
+    名称<input type="text" name="name" ><br/>
     <%--类别ID<input type="text" name="categoryId" value=""><br/>--%>
-    类别ID:<select name="categoryId">
+    类别:<select name="categoryId">
     <option></option>
     <c:forEach items="${categoryList}" var="category">
-        <option value="${category.id}">${category.id}</option>
+        <option >${category.name}</option>
     </c:forEach>
-</select>
-    子图<input type="file" name="subImages"><br/>
-    价格:<input type="text" name="price" value=""><br/>
-    库存:<input type="text" name="stock" value=""><br/>
-    状态:<input type="text" name="status" value=""><br/>
+          </select><br/>
+    子图<input type="file" name="subimages"><br/>
+    价格:<input type="text" name="price" ><br/>
+    库存:<input type="text" name="stock" ><br/>
+    状态:<input type="text" name="status"><br/>
     <input type="submit"  value="增加"><br/>
 
 </form>

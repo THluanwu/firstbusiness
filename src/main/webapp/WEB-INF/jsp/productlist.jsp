@@ -18,7 +18,7 @@
       <th>商品ID</th>
       <th>商品名称</th>
       <th>产品子图</th>
-      <th>类别ID</th>
+      <th>类别</th>
       <th>商品价格</th>
       <th>库存数量</th>
       <th>商品状态</th>

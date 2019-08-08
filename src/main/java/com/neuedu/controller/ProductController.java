@@ -67,14 +67,16 @@ public class ProductController {
         return "productinsert";
     }
     @RequestMapping(value = "insert",method = RequestMethod.POST)
-    public String insert(HttpServletRequest request, HttpServletResponse response, Product product, @RequestParam("subImages")MultipartFile uploadFile) throws UnsupportedEncodingException{
+    public String insert(HttpServletRequest request, HttpServletResponse response, Product product,
+                         @RequestParam(value = "subimages")MultipartFile uploadFile) throws UnsupportedEncodingException{
         request.setCharacterEncoding("UTF-8");
         response.setContentType("text/html;charset=UTF-8");
+        String newFileName="";
         if (uploadFile!=null){
             String uuid= UUID.randomUUID().toString();
             String fileName=uploadFile.getOriginalFilename();
             String fileextendname=fileName.substring(fileName.lastIndexOf("."));
-            String newFileName=uuid+fileextendname;
+            newFileName=uuid+fileextendname;
 
             File file=new File("E:\\bmpicture");
             if (!file.exists()){
@@ -87,6 +89,7 @@ public class ProductController {
                 e.printStackTrace();
             }
         }
+        product.setSubImages(newFileName);
         int count=productService.addProduct(product);
         if (count>0){
             return "redirect:/user/product/find";
